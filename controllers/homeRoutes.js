@@ -79,4 +79,22 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+router.get('/update/:id', async (req, res) => {
+  try {
+    // const postData = await Post.findByPk(req.params.id, {
+    //   include: [
+    //     {
+    //       model: User,
+    //       attributes: ['name'],
+    //     },
+    //   ],
+    // });
+
+    // const post = postData.get({ plain: true });
+
+    res.render('update');
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
