@@ -100,4 +100,12 @@ router.get('/update/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/comment',withAuth, (req,res)=> {
+  try{
+    res.render('comment')
+  }catch(err){
+    res.status(500).json(err);
+  }
+})
 module.exports = router;
