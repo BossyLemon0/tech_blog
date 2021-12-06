@@ -39,6 +39,8 @@ router.delete('/:id', withAuth, async (req, res) => {
 router.put('update/:id', withAuth, async (req, res) => {
   try {
     const PostData = await Post.update({
+      name:req.body.name, description:req.body.description
+    },{
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
@@ -50,7 +52,8 @@ router.put('update/:id', withAuth, async (req, res) => {
       return;
     }
 
-    res.status(200).json(PostData);
+    // res.status(200).json(PostData);
+    res.redirect('/profile');
   } catch (err) {
     res.status(500).json(err);
   }

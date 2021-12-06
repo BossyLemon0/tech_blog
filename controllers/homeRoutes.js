@@ -79,20 +79,23 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
-router.get('/update/:id', async (req, res) => {
+router.get('/update/:id', withAuth, async (req, res) => {
   try {
-    // const postData = await Post.findByPk(req.params.id, {
-    //   include: [
-    //     {
-    //       model: User,
-    //       attributes: ['name'],
-    //     },
-    //   ],
-    // });
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
-    // const post = postData.get({ plain: true });
+    const post = postData.get({ plain: true });
 
-    res.render('update');
+    res.render('update', {
+      ...post,
+      logged_in: true
+    });
   } catch (err) {
     res.status(500).json(err);
   }
