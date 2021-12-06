@@ -24,11 +24,10 @@ No installation required.
 
 Sign up for or log into an account. From their you are able to create a post and delete a post. If you click on the main header that says techblog, you will be directed to the homepage that contains all of the posts that have been made.
 
-![Application form](./Images/fitness_tracker_form.png)
+![Create a post](./images/tech_blog_dashboard.png)
 
-![Application dashboard](./Images/FItness_dashboard.png)
 
-[Deployed website](https://vast-everglades-56807.herokuapp.com/?id=61a6ead5eb8b17001691abb5)
+[Deployed website](https://quiet-shore-36331.herokuapp.com/)
 
 
 ## Contribution Guidelines
